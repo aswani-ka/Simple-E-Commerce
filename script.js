@@ -20,8 +20,8 @@ document.addEventListener("DOMContentLoaded", () => {
         const productDiv = document.createElement("div");
         productDiv.classList.add("product");
         productDiv.innerHTML = `
-        <span> ${product.name} - Rs.${product.price.toFixed(2)} </span>
-        <button data-id="${product.id}> Add to Cart </button>
+        <span> ${product.name} - Rs.${product.price.toFixed(2)}/kg </span>
+        <button data-id="${product.id}"> Add to Cart </button>
         `;
         productList.appendChild(productDiv);
     });
