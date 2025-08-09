@@ -33,4 +33,10 @@ document.addEventListener("DOMContentLoaded", () => {
             addToCart(product);
         }
     });
+
+    function addToCart(product) {
+        cart.push(product);
+        
+        
+    }
 });
