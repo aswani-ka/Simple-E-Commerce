@@ -1,0 +1,28 @@
+document.addEventListener("DOMContentLoaded", () => {
+    const products = [
+        {id: 1, name: "Tomato", price: 35.20},
+        {id: 2, name: "Carrot", price: 40.00},
+        {id: 3, name: "Pumpkin", price: 32.12},
+        {id: 4, name: "Eggs", price: 10.00},
+        {id: 5, name: "Beetroot", price: 48.04},
+    ];
+
+    let cart = [];
+
+    const productList = document.getElementById("product-list");
+    const cartItems = document.getElementById("cart-items");
+    const emptyCartMessage = document.getElementById("empty-cart");
+    const cartTotalMessage = document.getElementById("cart-total");
+    const totalPriceDisplay = document.getElementById("total-price");
+    const checkoutBtn = document.getElementById("checkout-btn");
+
+    products.forEach((product) => {
+        const productDiv = document.createElement("div");
+        productDiv.classList.add("product");
+        productDiv.innerHTML = `
+        <span> ${product.name} - Rs.${product.price.toFixed(2)} </span>
+        <button data-id="${product.id}> Add to Cart </button>
+        `;
+        productList.appendChild(productDiv);
+    });
+});
