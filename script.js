@@ -36,7 +36,27 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function addToCart(product) {
         cart.push(product);
-        
-        
+        renderCart();
+    }
+
+    function renderCart() {
+        cartItems.innerText = "";
+        let totalPrice = 0;
+        if(cart.length > 0) {
+            emptyCartMessage.classList.add("hidden");
+            cartTotalMessage.classList.remove("hidden");
+            cart.forEach((item, index) => {
+                totalPrice += item.price;
+                const cartItem = document.createElement("div");
+                cartItem.innerHTML = `
+                ${item.name} - Rs.${item.price.toFixed(2)}
+                <button pbtn-id="${item.id}"> Delete </button>
+                `
+                cartItems.appendChild(cartItem);
+            });
+            
+            cartTotalMessage.classList.add("hidden");
+            totalPriceDisplay.textContent = `Rs.00`;
+        }
     }
 });
