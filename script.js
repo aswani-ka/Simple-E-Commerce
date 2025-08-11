@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
         {id: 5, name: "Beetroot", price: 48.04},
     ];
 
-    let cart = [];
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
     const productList = document.getElementById("product-list");
     const cartItems = document.getElementById("cart-items");
@@ -36,6 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function addToCart(product) {
         cart.push(product);
+        saveToLocal();
         renderCart();
     }
 
@@ -71,14 +72,19 @@ document.addEventListener("DOMContentLoaded", () => {
             if(confirmDelete) {
                 cart = cart.filter((item) => item.id !== productId);
             }
+            saveToLocal();
             renderCart();
         }
     });
 
     checkoutBtn.addEventListener("click", () => {
         cart.length = 0;
+        localStorage.removeItem("cart");
         alert("You have Checkout Successfully!");
         renderCart();
     });
 
+    function saveToLocal() {
+        localStorage.setItem("cart", JSON.stringify(cart));
+    }
 });
