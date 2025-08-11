@@ -64,6 +64,19 @@ document.addEventListener("DOMContentLoaded", () => {
             totalPriceDisplay.textContent = `Rs.0.00`;
         }
     }
+    
+    cartItems.addEventListener("click", (e) => {
+        if(e.target.tagName === "BUTTON") {
+            const productId = parseInt(e.target.getAttribute("pbtn-id"));
+            console.log(productId);
+            
+            const confirmDelete = confirm("Are you sure want to remove this item from the cart?");
+            if(confirmDelete) {
+                cart = cart.filter((item) => item.id !== productId);
+            }
+            // renderCart();
+        }
+    });
 
 
 });
