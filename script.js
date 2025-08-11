@@ -56,8 +56,14 @@ document.addEventListener("DOMContentLoaded", () => {
                 cartItems.appendChild(cartItem);
             });
             
+           totalPriceDisplay.textContent = `Rs.${totalPrice.toFixed(2)}`;
+        }
+        else {
+            emptyCartMessage.textContent.remove("hidden");
             cartTotalMessage.classList.add("hidden");
-            totalPriceDisplay.textContent = `Rs.00`;
+            totalPriceDisplay.textContent = `Rs.0.00`;
         }
     }
+
+
 });
