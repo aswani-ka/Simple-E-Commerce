@@ -56,27 +56,29 @@ document.addEventListener("DOMContentLoaded", () => {
                 cartItems.appendChild(cartItem);
             });
             
-           totalPriceDisplay.textContent = `Rs.${totalPrice.toFixed(2)}`;
+            totalPriceDisplay.textContent = `Rs.${totalPrice.toFixed(2)}`;
         }
         else {
-            emptyCartMessage.textContent.remove("hidden");
+            emptyCartMessage.classList.remove("hidden");
             cartTotalMessage.classList.add("hidden");
-            totalPriceDisplay.textContent = `Rs.0.00`;
         }
     }
-    
+
     cartItems.addEventListener("click", (e) => {
         if(e.target.tagName === "BUTTON") {
             const productId = parseInt(e.target.getAttribute("pbtn-id"));
-            console.log(productId);
-            
             const confirmDelete = confirm("Are you sure want to remove this item from the cart?");
             if(confirmDelete) {
                 cart = cart.filter((item) => item.id !== productId);
             }
-            // renderCart();
+            renderCart();
         }
     });
 
+    checkoutBtn.addEventListener("click", () => {
+        cart.length = 0;
+        alert("You have Checkout Successfully!");
+        renderCart();
+    });
 
 });
