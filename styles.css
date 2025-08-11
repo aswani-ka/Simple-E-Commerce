@@ -7,8 +7,8 @@
 
 body {
   font-family: Arial, sans-serif;
-  background-color: #b4f5dc;
-  color: #ffffff;
+  background-color: #b1ae9a;
+  color: #2E7D32;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -18,7 +18,7 @@ body {
 .container {
   width: 400px;
   padding: 20px;
-  background-color: #ac2f86;
+  background-color: #deecdc;
   border-radius: 10px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
@@ -26,6 +26,12 @@ body {
 h1,
 h2 {
   margin-bottom: 20px;
+  color: #2E7D32;
+  text-align: center;
+}
+
+#empty-cart {
+  text-align: center;
 }
 
 #product-list {
@@ -33,7 +39,7 @@ h2 {
 }
 
 .product {
-  background-color: #e2d743;
+  background-color: #E8F5E9;
   padding: 12px;
   margin-bottom: 10px;
   display: flex;
@@ -43,9 +49,9 @@ h2 {
 }
 
 .product button {
-  background-color: #343535;
+  background-color: #43A047;
   border: none;
-  padding: 5px 10px;
+  padding: 6px 10px;
   color: #fff;
   border-radius: 5px;
   cursor: pointer;
@@ -53,20 +59,20 @@ h2 {
 }
 
 .product button:hover {
-  background-color: #0f0f0f;
+  background-color: #2E7D32;
 }
 
 .removebtn {
-  padding: 3px;
+  padding: 5px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
 .removebtn button {
-  background-color: #df3d6d;
+  background-color: #fc081c;
   border: none;
-  padding: 3px 5px;
+  padding: 6px 10px;
   color: #fff;
   border-radius: 5px;
   cursor: pointer;
@@ -74,7 +80,7 @@ h2 {
 }
 
 .removebtn button:hover {
-  background-color: #da2231;
+  background-color: #cc0314;
 }
 
 
