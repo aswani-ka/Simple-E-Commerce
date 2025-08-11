@@ -48,9 +48,10 @@ document.addEventListener("DOMContentLoaded", () => {
             cart.forEach((item, index) => {
                 totalPrice += item.price;
                 const cartItem = document.createElement("div");
+                cartItem.classList.add("removebtn");
                 cartItem.innerHTML = `
                 ${item.name} - Rs.${item.price.toFixed(2)}
-                <button pbtn-id="${item.id}"> Delete </button>
+                <button pbtn-id="${item.id}"> Remove </button>
                 `
                 cartItems.appendChild(cartItem);
             });
